@@ -3,13 +3,11 @@
   <head>
     <title>Collegeplus</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
   <body>
-  <div class="container">
+  <div class="container" style="width: 90%">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -23,14 +21,31 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Events</a></li>
+            <li class="active"><a href="/home">Home</a></li>
+            <li><a href="/events">Events</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
     </nav>
     <%= yield %>
-
   </div>
   </body>
+
+  <footer>
+    <div class="container">
+      <div class="row vcenter">
+        <div class="pull-left col-lg-4 col-xs-12">
+          <p>Copyright &copy;2017 Collegeplus</p>
+        </div>
+        <div class="col-lg-4 col-lg-offset-4 col-xs-12">
+          <div class="pull-right">
+            <a href="#"><i class="icon-facebook"></i></a>
+            <a href="#"><i class="fa fa-facebook-square fa-icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
 </html>
