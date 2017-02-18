@@ -1,65 +1,111 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    Event
-  </div>
-  <div class="panel-body">
-    <div class="form-horizontal">
-      <div class="row">
-        <label class="control-label col-md-3">Title:</label>
-        <div class="col-md-9">
-          <p class="form-control-static">
-            <%= @event.title %>
-          </p>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-1">
+
+        <div class="thumbnail">
+          <%= image_tag(@event.image, class: "img-responsive") %>
         </div>
+        <!-- <div class="page-header">
+          <h1><%= @event.title %></h1>
+        </div> -->
       </div>
 
-      <div class="row">
-        <label class="control-label col-md-3">Details:</label>
-        <div class="col-md-9">
-          <p class="form-control-static">
-            <%= @event.details %>
-          </p>
-        </div>
-      </div>
-
-      <div class="row">
-        <label class="control-label col-md-3">
-          Requirements:
-        </label>
-        <div class="col-md-9">
-          <p class="form-control-static">
-
-            <%= @event.requirement %>
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <label class="control-label col-md-3">Event Date:</label>
-        <div class="col-md-9">
-          <p class="form-control-static"><%= @event.eventdate %></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <label class="control-label col-md-3">To see more, view this link:</label>
-        <div class="col-md-9">
-          <p class="form-control-static"><%= @event.link %></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <label class="control-label col-md-3">Price:</label>
-        <div class="col-md-9">
-          <p class="form-control-static"><% if @event.price == 0 %>
-                Free!
-            <% else %>
-                <%= @event.price %>
-            <% end %></p>
-        </div>
+      <div class="col-md-3">
+        <!-- <div class="panel panel-default"> -->
+        
+        <h3><%= @event.eventdate.strftime("%B") %></h3>
+        <h4 class="text-muted"><%= @event.eventdate.strftime("%d") %></h4>
+      
+        <h2><%= @event.title %></h2>
+        <h4 class="text-muted">by <%= @event.company %></h4>
+      
+        <hr>
+        <% if @event.price == 0 %>
+          <h2>Free!</h2>
+        <% else %>
+          <h2><%= number_to_currency(@event.price, unit: "₱") %></h2>
+        <% end %>
+        
+        <!-- </div> -->
       </div>
     </div>
   </div>
 </div>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+    <h4><b>Description</b></h4>
+      <%= simple_format @event.details %>
+    <br>
+    <h4><b>Website:</b> <%= link_to @event.link, @event.link %></h4>
+
+    <br>
+    <h4><b>Requirements to join</b></h4>
+    <%= simple_format @event.requirement %>
+    
+
+
+
+    </div>
+
+    <div class="col-md-3">
+      <h3><b>Application Period</b></h3>
+      From <%= @event.applicationstart.strftime("%B %d") %> - To <%= @event.applicationend.strftime("%B %d, %Y") %>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @event.image %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @event.details.html_safe %>
+</p>
+
+<p>
+  <strong>Requirements:</strong>
+  <%= @event.requirement %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.eventdate %>
+</p>
+
+<p>
+  <strong>Application period:</strong>
+  From: <%= @event.applicationstart %> - To: <%= @event.applicationend %>
+</p>
+
+<p>
+  <strong>To see more, view this link:</strong>
+  <%= @event.link %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <% if @event.price == 0 %>
+  	Free!
+  <% else %>
+  <%= @event.price %>
+  <% end %>
+</p
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+ -->
