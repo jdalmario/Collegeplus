@@ -1,43 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Event
+  </div>
+  <div class="panel-body">
+    <div class="form-horizontal">
+      <div class="row">
+        <label class="control-label col-md-3">Title:</label>
+        <div class="col-md-9">
+          <p class="form-control-static">
+            <%= @event.title %>
+          </p>
+        </div>
+      </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+      <div class="row">
+        <label class="control-label col-md-3">Details:</label>
+        <div class="col-md-9">
+          <p class="form-control-static">
+            <%= @event.details %>
+          </p>
+        </div>
+      </div>
 
-<p>
-  <strong>Details:</strong>
-  <%= @event.details %>
-</p>
+      <div class="row">
+        <label class="control-label col-md-3">
+          Requirements:
+        </label>
+        <div class="col-md-9">
+          <p class="form-control-static">
 
-<p>
-  <strong>Requirements:</strong>
-  <%= @event.requirement %>
-</p>
+            <%= @event.requirement %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <label class="control-label col-md-3">Event Date:</label>
+        <div class="col-md-9">
+          <p class="form-control-static"><%= @event.eventdate %></p>
+        </div>
+      </div>
 
-<p>
-  <strong>Event date:</strong>
-  <%= @event.eventdate %>
-</p>
+      <div class="row">
+        <label class="control-label col-md-3">To see more, view this link:</label>
+        <div class="col-md-9">
+          <p class="form-control-static"><%= @event.link %></p>
+        </div>
+      </div>
 
-<p>
-  <strong>Application period:</strong>
-  From: <%= @event.applicationstart %> - To: <%= @event.applicationend %>
-</p>
-
-<p>
-  <strong>To see more, view this link:</strong>
-  <%= @event.link %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <% if @event.price == 0 %>
-  	Free!
-  <% else %>
-  <%= @event.price %>
-  <% end %>
-</p
+      <div class="row">
+        <label class="control-label col-md-3">Price:</label>
+        <div class="col-md-9">
+          <p class="form-control-static"><% if @event.price == 0 %>
+                Free!
+            <% else %>
+                <%= @event.price %>
+            <% end %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
