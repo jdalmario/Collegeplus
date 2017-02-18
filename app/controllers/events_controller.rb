@@ -4,11 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @search = Event.search do
-      fulltext params[:search]
-    end
-    # @events = Event.all.order("created_at DESC")
-    @events = @search.results
+    # @search = Event.search do
+    #   fulltext params[:search]
+    # end
+    @events = Event.all.order("created_at DESC")
+    # @events = @search.results
   end
 
   # GET /events/1
@@ -75,6 +75,4 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :details, :eventdate, :applicationstart, :applicationend, :requirement, :link, :price)
     end
-
-
 end
