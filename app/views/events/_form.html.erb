@@ -11,47 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
 
-  <div class="field">
-    <%= f.label :details %>
-    <%= f.text_area :details %>
-  </div>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :requirement %>
-    <%= f.text_area :requirement %>
-  </div>
+      <div class="field">
+        <%= f.label :details %>
+        <%= f.text_area :details, class: "form-control", rows: 4 %>
+      </div>
 
-  <div class="field">
-    <%= f.label :eventdate %>
-    <%= f.datetime_select :eventdate %>
-  </div>
+      <div class="field">
+        <%= f.label :requirement %>
+        <%= f.text_area :requirement, class: "form-control", rows: 4 %>
+      </div>
 
-  <div class="field">
-    <%= f.label :applicationstart %>
-    <%= f.datetime_select :applicationstart %>
-  </div>
+      <div class="field">
+        <%= f.label :eventdate %>
+        <%= f.text_field :eventdate, class: "form-control", type: "datetime-local" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :applicationend %>
-    <%= f.datetime_select :applicationend %>
-  </div>
+      <div class="field">
+        <%= f.label :applicationstart %>
+        <%= f.text_field :applicationstart, class: "form-control", type: "datetime-local" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :link %>
-    <%= f.text_field :link %>
-  </div>
+      <div class="field">
+        <%= f.label :applicationend %>
+        <%= f.text_field :applicationend, class: "form-control", type: "datetime-local" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-  </div>
+      <div class="field">
+        <%= f.label :link %>
+        <%= f.text_field :link, class: "form-control" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="field">
+        <%= f.label :price %>
+        <%= f.number_field :price, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.text_field :image, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :company%>
+        <%= f.text_field :company, class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
   </div>
+</div>
+
+
+
 <% end %>
+
+
