@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @event.details %>
+</p>
+
+<p>
+  <strong>Requirements:</strong>
+  <%= @event.requirement %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.eventdate %>
+</p>
+
+<p>
+  <strong>Application period:</strong>
+  From: <%= @event.applicationstart %> - To: <%= @event.applicationend %>
+</p>
+
+<p>
+  <strong>To see more, view this link:</strong>
+  <%= @event.link %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <% if @event.price == 0 %>
+  	Free!
+  <% else %>
+  <%= @event.price %>
+  <% end %>
+</p
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
