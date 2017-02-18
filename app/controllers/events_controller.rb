@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.order("created_at DESC")
+    @search = Event.search do
+      fulltext params[:search]
+    end
+    # @events = Event.all.order("created_at DESC")
+    @events = @search.results
   end
 
   # GET /events/1

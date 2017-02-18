@@ -1,5 +1,9 @@
 class Event < ApplicationRecord
 
+	searchable do
+		text :title, :details, :requirement
+	end
+
 	validates :title, :details, :eventdate, :applicationstart, :applicationend, :requirement, :link, presence: true
 	validates :price, numericality: {greater_than_or_equal_to: 0.00}
 
