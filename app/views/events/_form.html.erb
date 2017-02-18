@@ -28,22 +28,27 @@
 
   <div class="field">
     <%= f.label :eventdate %>
-    <%= f.date_select :eventdate %>
+    <%= f.datetime_select :eventdate %>
   </div>
 
   <div class="field">
     <%= f.label :applicationstart %>
-    <%= f.date_select :applicationstart %>
+    <%= f.datetime_select :applicationstart %>
   </div>
 
   <div class="field">
     <%= f.label :applicationend %>
-    <%= f.date_select :applicationend %>
+    <%= f.datetime_select :applicationend %>
   </div>
 
   <div class="field">
     <%= f.label :link %>
     <%= f.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price %>
   </div>
 
   <div class="actions">

@@ -30,5 +30,14 @@
   <%= @event.link %>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <% if @event.price == 0 %>
+  	Free!
+  <% else %>
+  <%= @event.price %>
+  <% end %>
+</p
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
