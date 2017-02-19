@@ -1,4 +1,36 @@
-<p id="notice"><%= notice %></p>
+
+
+<% @events.in_groups_of(3, false).each do |group| %>
+<div class="row">
+
+  <% group.each do |event| %>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="events/<%=event.id %>">
+          <%= image_tag(event.image, size: "200x100", style: "width: 100%") %>
+          <div class="caption">
+            <h3><%= event.title %></h3>
+
+            <% if event.price == 0 %>
+              <span class="label label-success">Free!</span>
+            <% else %>
+              <span class="label label-primary"><%= number_to_currency(event.price, unit: "₱") %></span>
+            <% end %>
+
+            <p><%= simple_format truncate(event.details, length: 140) %></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+  <!--<%= link_to 'New Event', new_event_path %>-->
+
+</div>
+<% end %>
+
+
+
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
 
@@ -27,3 +59,4 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+ -->
