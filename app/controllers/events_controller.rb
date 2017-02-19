@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     # @search = Event.search do
     #   fulltext params[:search]
     # end
-    @events = Event.all.order("created_at DESC")
+    @events = Event.all.order("eventdate ASC")
     # @events = @search.results
   end
 
