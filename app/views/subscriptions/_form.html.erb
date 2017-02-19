@@ -1,22 +1,18 @@
-<%= form_for(subscription) do |f| %>
-  <% if subscription.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
 
-      <ul>
-      <% subscription.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="row">
+
+  <%= form_for(@subscription) do |f| %>
+
+    <div class="col-md-9 input-group">
+      <%= f.text_field :email, class: "form-control", type: "email", placeholder: "What's your email?" %>
+
+      <span class="input-group-btn">
+        <%= f.submit nil, class: "btn btn-success" %>
+      </span>
+
     </div>
+
+
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

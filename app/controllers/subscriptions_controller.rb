@@ -28,11 +28,11 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
-        format.json { render :show, status: :created, location: @subscription }
+        format.html { redirect_to home_index_path, notice: 'Subscription was successfully created.' }
+        format.json { render :show, status: :created, location: home_index_path }
       else
-        format.html { render :new }
-        format.json { render json: @subscription.errors, status: :unprocessable_entity }
+        format.html { redirect_to home_index_path, alert: 'Subscription was unsuccessful.' }
+        format.json { render :show, status: :created, location: home_index_path }
       end
     end
   end
